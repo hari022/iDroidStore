@@ -1,0 +1,21 @@
+
+
+
+
+  <div class="row" >
+    <div class="col-md-12">
+      <div class="col-sm-6 col-md-4" *ngFor="let product of products">
+        <div class="thumbnail">
+          <img style="height: 250px" src={{product.img}} alt="...">
+          <div class="caption">
+            <h1>{{product.$key}}</h1>
+            <p>{{product.Description}}</p>
+            <p>OS: {{product.OS}}</p>
+            <p><strong>${{product.Price}}</strong></p>
+            <p><a  routerLink="cart" class="btn btn-primary" role="button" (click)="getProductDetails(product.$key, product.cartQuantity)">Add to Cart</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

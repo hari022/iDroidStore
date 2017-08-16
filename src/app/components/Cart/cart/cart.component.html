@@ -1,0 +1,26 @@
+
+<h1>Cart</h1>
+<div class="row" *ngFor="let product of products" >
+
+
+
+  <div class="col-sm-8 col-md-4" *ngIf="product.cartQuantity > 0">
+    <div class="thumbnail">
+      <img style="height: 250px" src={{product.img}} alt="...">
+
+    </div>
+  </div>
+  <div class="col-sm-8 col-md-4" *ngIf="product.cartQuantity > 0">
+
+
+    <div >
+
+      <h2><strong>Single unit Price: ${{product.Price}}</strong></h2>
+      <h3><strong>Quantity: {{product.cartQuantity}}</strong></h3>
+      <button routerLink="cart" (click)="addProductQuantity(product.$key, product.cartQuantity)" class="btn btn-primary">+ Quantity</button>
+      <button routerLink="cart" (click)="reduceProductQuantity(product.$key, product.cartQuantity)"  class="btn btn-danger">- Quantity</button>
+    </div>
+
+  </div>
+
+</div>
